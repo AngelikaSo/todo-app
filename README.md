@@ -1,6 +1,6 @@
 # todo-app
 CRUD functionality todo app project
-Creat new task
+Create new task
 Read tasks
 Update task
 Delete task
