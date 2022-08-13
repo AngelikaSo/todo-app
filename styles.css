@@ -204,12 +204,14 @@ input[type="checkbox"] {
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
+  padding: 5px;
 }
 
 input[type="checkbox"]::before {
   content: "";
   width: 0.45em;
   height: 0.45em;
+
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
