@@ -2,12 +2,11 @@
 @media only screen and (max-width: 600px) {
   body {
     height: 100vh;
-    /* width: 100vw; */
   }
 
   .app {
     width: 330px;
-    height: 500px;
+    height: 600px;
   }
 
   #addNew input {
@@ -16,31 +15,25 @@
 
   span .btn {
     margin-left: 250px;
-    margin-right: 5px;
-    justify-content: center;
-    grid-column-end: auto;
-    /* margin-top: 5px; */
   }
 
   .wraper {
-    height: 230px;
     width: 310px;
+    height: 350px;
   }
 
   #tasks {
     width: 300px;
   }
 
-  h5 {
+  h4 {
     font-size: 16px;
   }
 
   h5 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
-    padding-top: 20px;
-    /* display: flex;
-    justify-content: center; */
+    padding-top: 10px;
   }
 
   i {
@@ -48,10 +41,6 @@
   }
 
   #tasks div span {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
     font-size: 16px;
   }
 }
@@ -62,35 +51,45 @@
     height: 100vh;
   }
   .app {
-    height: 600px;
+    height: 550px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    padding-top: 10px;
+    font-size: 16px;
   }
 
   .wraper {
-    height: 300px;
+    height: 270px;
   }
 }
 
-/* Large devices (laptops/desktops, 992px) */
+/* Large devices (laptops/desktops/tablets 992px) */
 @media only screen and (min-width: 801px) and (max-width: 992px) {
   body {
     height: 100vh;
   }
   .app {
-    height: 650px;
+    height: 750px;
   }
   .wraper {
-    height: 350px;
+    height: 450px;
   }
 }
 
+/* Large devices (laptops/desktops) */
 @media only screen and (min-width: 993px) and (max-width: 1600px) and (orientation: landscape) {
   body {
     height: 100vh;
   }
   .app {
-    height: 640px;
+    height: 620px;
   }
   .wraper {
-    height: 340px;
+    height: 320px;
   }
 }
