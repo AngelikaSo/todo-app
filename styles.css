@@ -208,7 +208,7 @@ input[type="checkbox"] {
 }
 
 div span p {
-  padding-right: 5px;
+  padding-right: 2px;
 }
 
 input[type="checkbox"]::before {
