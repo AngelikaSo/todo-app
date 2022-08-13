@@ -7,13 +7,13 @@
 :root {
   --primary-color: white;
   --secondary-color: #a78bfa;
-  --teritary-color: #222;
+  --teritary-color: #444;
 }
 
 .dark-theme {
   --primary-color: #a78bfa;
   --secondary-color: #4c1d95;
-  --teritary-color: white;
+  --teritary-color: rgb(232, 229, 229);
 }
 
 body {
@@ -34,6 +34,7 @@ body {
   padding: 15px;
   padding-top: 25px;
   margin-bottom: 10px;
+  box-shadow: 15px 15px 35px #88888855;
 }
 
 .header {
@@ -47,7 +48,7 @@ body {
 
 .wraper {
   width: 465px;
-  height: 535px;
+  height: 500px;
   border-radius: 8px;
   margin: 0;
   overflow-y: scroll;
@@ -97,7 +98,7 @@ span .btn {
 
 #addNew input {
   background-color: #f5f3ff;
-  padding: 15px 280px 15px 15px;
+  padding: 15px 270px 15px 15px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
@@ -123,7 +124,7 @@ span .btn {
 }
 
 #tasks {
-  width: 470px;
+  width: 464px;
   display: grid;
   gap: 15px;
   padding: 4px;
@@ -144,6 +145,7 @@ span .btn {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
 }
 
 .options {
@@ -152,18 +154,21 @@ span .btn {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
-  padding-top: 20px;
+  padding-top: 40px;
+  /* display: flex;
+  justify-content: center; */
 }
 
 i {
   cursor: pointer;
   color: #ddd6fe;
+  font-size: 20px;
 }
 
 .fa-trash:hover {
