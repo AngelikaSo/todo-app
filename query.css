@@ -5,11 +5,17 @@
   }
 
   .app {
+    width: 330;
     height: 500px;
   }
 
   .wraper {
     height: 200px;
+    width: 310px;
+  }
+
+  #tasks {
+    width: 300px;
   }
 }
 
