@@ -48,7 +48,7 @@ body {
 
 .wraper {
   width: 465px;
-  height: 500px;
+  height: 520px;
   border-radius: 8px;
   margin: 0;
   overflow-y: scroll;
@@ -160,7 +160,7 @@ h4 {
 h5 {
   font-size: 18px;
   margin-bottom: 10px;
-  padding-top: 40px;
+  padding-top: 10px;
   /* display: flex;
   justify-content: center; */
 }
