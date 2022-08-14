@@ -37,21 +37,36 @@ let acceptData = () => {
 // function to create new task // clear the input field after
 let createTask = () => {
   tasks.innerHTML = "";
-  data.map((x, y) => {
-    return (tasks.innerHTML += `
-  <div id="${y}">
-    <span>
-     <input title="check" type="checkbox" id="" name="check" value="check" class="checkbox">
-     <p>${x.text}</p>
-    </span>
+  if (data) {
+    data.map((x, y) => {
+      let isCompleted = x.status == "completed" ? "checked" : "";
+      return (tasks.innerHTML += `
+  <div class="done">
+    <label for="${y}">
+     <input onclick="updateStatus(this)" type="checkbox" id="${y}" ${isCompleted}>
+     <p class="${isCompleted}">${x.text}</p>
+    </label>
     <span class="options">
      <i onClick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
      <i onClick="deleteTask(this);createTask()" class="fa-solid fa-trash"></i>
     </span>
   </div>`);
-  });
+    });
+  }
   inputText.value = "";
 };
+
+function updateStatus(selectedTask) {
+  let taskName = selectedTask.parentElement.lastElementChild;
+  if (selectedTask.checked) {
+    taskName.classList.add("checked");
+    data[selectedTask.id].status = "completed";
+  } else {
+    taskName.classList.remove("checked");
+    data[selectedTask.id].status = "pending";
+  }
+  localStorage.setItem("data", JSON.stringify(data));
+}
 
 // delete task // set to local storage
 let deleteTask = (e) => {
@@ -105,5 +120,6 @@ icon.onclick = () => {
 
 // ADDITIONAL TASKS TO IMPROVE THE APP:
 // save "checked" task to local storage
+
 // move checked task to the end of the list
 // read dark mode from local storage

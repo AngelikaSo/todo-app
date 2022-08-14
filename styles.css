@@ -8,12 +8,14 @@
   --primary-color: white;
   --secondary-color: #a78bfa;
   --teritary-color: #444;
+  --c-gray-1: rgb(216, 204, 204);
 }
 
 .dark-theme {
   --primary-color: #a78bfa;
   --secondary-color: #4c1d95;
   --teritary-color: rgb(232, 229, 229);
+  --c-gray-1: #4c1d95;
 }
 
 body {
@@ -140,7 +142,7 @@ span .btn {
   border-radius: 5px;
 }
 
-#tasks div span {
+#tasks div label {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -207,8 +209,13 @@ input[type="checkbox"] {
   padding: 5px;
 }
 
-div span p {
+#tasks div label p {
   padding-right: 2px;
+}
+
+#tasks div label p.checked {
+  text-decoration: line-through;
+  color: var(--c-gray-1);
 }
 
 input[type="checkbox"]::before {
@@ -219,7 +226,7 @@ input[type="checkbox"]::before {
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--teritary-color);
+  box-shadow: inset 1em 1em var(--c-gray-1);
 }
 
 input[type="checkbox"]:checked::before {
@@ -235,6 +242,7 @@ input[type="checkbox"]:checked + *::before {
   );
   border-color: var(--secondary-color);
 }
-input[type="checkbox"]:checked + * {
+/* .done input[type="checkbox"]:checked + * {
   text-decoration: line-through;
-}
+  color: var(--c-gray-1);
+} */
