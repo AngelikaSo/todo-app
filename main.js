@@ -2,14 +2,14 @@ let addNew = document.getElementById("addNew");
 let inputText = document.getElementById("input-text");
 let msg = document.getElementById("msg");
 let tasks = document.getElementById("tasks");
-
+let editId;
+let isEditedTask = false;
 // addEventListener to the ADD button in order to submit task
 addNew.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("button clicked");
   formValidation();
 });
-
 // formValidation check if the input field is filled out or not
 let formValidation = () => {
   if (inputText.value === "") {
@@ -26,9 +26,16 @@ let formValidation = () => {
 let data = [];
 // function to accept the data into input field and save to local storage
 let acceptData = () => {
-  data.push({
-    text: inputText.value,
-  });
+  let userTask = inputText.value.trim();
+  if (!isEditedTask) {
+    data.push({
+      text: inputText.value,
+      status: "pending",
+    });
+  } else {
+    isEditedTask = false;
+    data[editId].text = userTask;
+  }
   localStorage.setItem("data", JSON.stringify(data));
   console.log(data);
   createTask();
@@ -41,19 +48,33 @@ let createTask = () => {
     data.map((x, y) => {
       let isCompleted = x.status == "completed" ? "checked" : "";
       return (tasks.innerHTML += `
-  <div class="done">
+  <div>
     <label for="${y}">
      <input onclick="updateStatus(this)" type="checkbox" id="${y}" ${isCompleted}>
      <p class="${isCompleted}">${x.text}</p>
     </label>
     <span class="options">
-     <i onClick="editTask(this)" class="fa-solid fa-pen-to-square"></i>
-     <i onClick="deleteTask(this);createTask()" class="fa-solid fa-trash"></i>
+     <i onClick="editTask(${y}, ${x.text})" class="fa-solid fa-pen-to-square"></i>
+     <i onClick="deleteTask(${y});createTask()" class="fa-solid fa-trash"></i>
     </span>
   </div>`);
     });
   }
   inputText.value = "";
+};
+
+// delete task // set to local storage
+let deleteTask = (e) => {
+  data.splice(e, 1);
+  localStorage.setItem("data", JSON.stringify(data));
+  createTask();
+};
+
+// edit task // and delete the original one
+let editTask = (taskId, taskName) => {
+  editId = taskId;
+  isEditedTask = true;
+  inputText.value = taskName;
 };
 
 function updateStatus(selectedTask) {
@@ -67,21 +88,6 @@ function updateStatus(selectedTask) {
   }
   localStorage.setItem("data", JSON.stringify(data));
 }
-
-// delete task // set to local storage
-let deleteTask = (e) => {
-  e.parentElement.parentElement.remove();
-  data.splice(e.parentElement.parentElement.id, 1);
-  localStorage.setItem("data", JSON.stringify(data));
-};
-
-// edit task // and delete the original one
-let editTask = (e) => {
-  let selectedTask = e.parentElement.previousElementSibling;
-  // inputText.value = selectedTask.children[0].innerHTML;
-  inputText.value = selectedTask.children[1].innerHTML;
-  deleteTask(e);
-};
 
 // get item from local storage
 (() => {
@@ -119,7 +125,7 @@ icon.onclick = () => {
 };
 
 // ADDITIONAL TASKS TO IMPROVE THE APP:
-// save "checked" task to local storage
+// save "checked" task to local storage - done
 
 // move checked task to the end of the list
 // read dark mode from local storage
