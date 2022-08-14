@@ -96,36 +96,36 @@ function updateStatus(selectedTask) {
 })();
 
 // Dark mode toggle
-let icon = document.getElementById("toggle-dark");
 
-// enacle dark mode
-const enableDarkMode = () => {
-  localStorage.setItem("darkMode", "true");
-  icon.classList.remove("bi-moon-fill");
-  icon.innerHTML = `<i class="bi bi-brightness-high-fill"></i>`;
-};
+// get dark mode from localStorage
+function isDark() {
+  return localStorage.getItem("dark-mode");
+}
 
-// disable dark mode
-const disableDarkMode = () => {
-  localStorage.setItem("darkMode", "false");
-  icon.classList.remove("bi-brightness-high-fill");
-  icon.innerHTML = `<i class="bi bi-moon-fill" id="toggle-dark"></i>`;
-};
+// toggle dark-theme
+function toggleRootClass() {
+  document.querySelector(":root").classList.toggle("dark-theme");
+}
 
-// event - click on the icon to change the light/dark mode
-icon.onclick = () => {
-  document.body.classList.toggle("dark-theme");
-  localStorage.setItem("darkMode", "true)");
-
-  if (document.body.classList.contains("dark-theme")) {
-    enableDarkMode();
+// set dark-theme in localStorage
+function toggleLocalStorageItem() {
+  if (isDark()) {
+    localStorage.removeItem("dark-mode");
   } else {
-    disableDarkMode();
+    localStorage.setItem("dark-mode", "set");
   }
-};
+}
+
+if (isDark()) {
+  toggleRootClass();
+}
+// event listener CLICK event
+document.querySelector(".theme-icon").addEventListener("click", () => {
+  toggleLocalStorageItem();
+  toggleRootClass();
+});
 
 // ADDITIONAL TASKS TO IMPROVE THE APP:
 // save "checked" task to local storage - done
-
+// read dark mode from local storage - done
 // move checked task to the end of the list
-// read dark mode from local storage

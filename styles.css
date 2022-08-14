@@ -11,11 +11,44 @@
   --c-gray-1: rgb(216, 204, 204);
 }
 
-.dark-theme {
+:root.dark-theme {
   --primary-color: #a78bfa;
   --secondary-color: #4c1d95;
   --teritary-color: rgb(232, 229, 229);
   --c-gray-1: #4c1d95;
+}
+
+.theme-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  /* box-shadow: var(--box-shadow); */
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: rgba(226, 232, 240, 0);
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+:root.dark-theme .theme-icon .bi-moon-fill {
+  display: none;
+}
+
+:root.dark-theme .theme-icon .bi-brightness-high-fill {
+  display: inline-block;
+  /* color: white; */
+}
+
+:root .theme-icon .bi-moon-fill {
+  display: inline-block;
+}
+
+:root .theme-icon .bi-brightness-high-fill {
+  display: none;
 }
 
 body {
