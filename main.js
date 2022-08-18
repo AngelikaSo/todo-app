@@ -71,10 +71,10 @@ let deleteTask = (e) => {
 };
 
 // edit task // and delete the original one
-let editTask = (taskId, taskName) => {
+let editTask = (taskId, text) => {
   editId = taskId;
   isEditedTask = true;
-  inputText.value = taskName;
+  inputText.value = text;
 };
 
 function updateStatus(selectedTask) {
