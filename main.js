@@ -54,7 +54,7 @@ let createTask = () => {
      <p class="${isCompleted}">${x.text}</p>
     </label>
     <span class="options">
-     <i onClick="editTask(${y}, ${x.text})" class="fa-solid fa-pen-to-square"></i>
+     <i onClick="editTask(${y}, '${x.text}')" class="fa-solid fa-pen-to-square"></i>
      <i onClick="deleteTask(${y});createTask()" class="fa-solid fa-trash"></i>
     </span>
   </div>`);
@@ -71,10 +71,10 @@ let deleteTask = (e) => {
 };
 
 // edit task // and delete the original one
-let editTask = (taskId, text) => {
+let editTask = (taskId, taskName) => {
   editId = taskId;
   isEditedTask = true;
-  inputText.value = text;
+  inputText.value = taskName;
 };
 
 function updateStatus(selectedTask) {
