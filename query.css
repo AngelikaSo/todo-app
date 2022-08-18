@@ -69,7 +69,7 @@
 }
 
 /* Large devices (laptops/desktops/tablets 992px) */
-@media only screen and (min-width: 801px) and (max-width: 1800px) and (orientation: landscape) {
+@media only screen and (min-width: 801px) and (max-width: 1920px) and (orientation: landscape) {
   body {
     height: 100vh;
   }
@@ -78,6 +78,7 @@
   }
   .wraper {
     height: 390px;
+    width: 470px;
   }
 }
 
