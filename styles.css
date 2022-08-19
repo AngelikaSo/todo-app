@@ -82,7 +82,7 @@ body {
 }
 
 .wraper {
-  width: 465px;
+  width: 470px;
   height: 520px;
   border-radius: 8px;
   margin: 0;
@@ -125,7 +125,7 @@ span #msg {
 }
 span .btn {
   margin-left: 360px;
-  margin-right: 5px;
+  margin-right: 2px;
   justify-content: center;
   grid-column-end: auto;
   /* margin-top: 5px; */
@@ -133,7 +133,7 @@ span .btn {
 
 #addNew input {
   background-color: #f5f3ff;
-  padding: 15px 270px 15px 15px;
+  padding: 15px 268px 15px 15px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
@@ -159,7 +159,7 @@ span .btn {
 }
 
 #tasks {
-  width: 464px;
+  max-width: 470px;
   display: grid;
   gap: 15px;
   padding: 4px;
