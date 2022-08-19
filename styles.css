@@ -161,6 +161,7 @@ span .btn {
 #tasks {
   max-width: 470px;
   display: grid;
+  word-break: break-all;
   gap: 15px;
   padding: 4px;
 }
